@@ -21,7 +21,9 @@ const Header: React.FC = () => {
             <div className="max-w-screen-x1 h-full mx-auto flex items-center">
                 <ul className="flex items-center justify-between gap-8 mr-5">
                     {['Home'].map((item, index) => {
-                        return <li className="text-base text-black font-bold hover:text-stone-400 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300" key={index}>{item}</li>
+                        return <Link to='/'>
+                            <li className="text-base text-black font-bold hover:text-stone-400 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300" key={index}>{item}</li>
+                        </Link>
                     })}
                 </ul>
                 <Link to='/cart'>
@@ -31,11 +33,11 @@ const Header: React.FC = () => {
                     </div>
                 </Link>
                 <Link to='/login'>
-                    {userInfo?(<h3 className="text-bold text-black font-bold hover:text-stone-400 cursor-pointer duration-300">Log Out</h3>):(<h3 className="text-bold text-black font-bold hover:text-stone-400 cursor-pointer duration-300">Login</h3>)}
-                    
+                    {userInfo ? (<h3 className="text-bold text-black font-bold hover:text-stone-400 cursor-pointer duration-300">Log Out</h3>) : (<h3 className="text-bold text-black font-bold hover:text-stone-400 cursor-pointer duration-300">Login</h3>)}
+
                 </Link>
                 {
-                    userInfo&&<p className='text-base font-semibold underline-offset-2 ml-5' >Welcome, {userInfo.name}!</p>
+                    userInfo && <p className='text-base font-semibold underline-offset-2 ml-5' >Welcome, {userInfo.name}!</p>
                 }
 
             </div>
