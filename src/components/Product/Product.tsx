@@ -73,7 +73,7 @@ const Product: React.FC = () => {
                                 return <AiFillStar style={{ color: 'darkgrey' }} />
                             })}
                         </div>
-                        <p>(1 customer review)</p>
+                        <p>({fullDetailsCard.rating.count} customer review)</p>
                     </div>
                     <p className="text-base text-gray-500 -mt-3">{fullDetailsCard.description}</p>
                     <div className="flex items-center gap-2">
