@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../../redux/store';
 import CartItem from "../../components/CartItem/CartItem";
@@ -7,21 +7,20 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import { payForProductsData } from "../../api/Api";
 
+
+
 const Cart: React.FC = () => {
     const productData = useSelector((state: RootState) => state.products.productData);
     const userInfo = useSelector((state: RootState) => state.products.userInfo);
     const dispatch = useDispatch();
-    const [payNow, setPayNow] = useState(false)
-    console.log(payNow)
-
+    
     const handleResetCart = () => {
         dispatch(resetCart());
     }
 
     const handlerCheckOut = async () => {
         !userInfo && toast.error('Please, sign in for take an order')
-        userInfo && setPayNow(true);
-
+        
         if (userInfo) {
             const data = productData.map(item => {
                 return { 'id': item.id, 'quantity': item.quantity, 'price': item.price, 'name': item.title }

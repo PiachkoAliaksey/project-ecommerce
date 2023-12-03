@@ -7,7 +7,7 @@ interface IProdArr{
 }
 
 const Products:React.FC<IProdArr> = ({products}) => {
-    console.log(products)
+   
     return (
         <section className="py-10">
             <div className="flex flex-col items-center gap-4">

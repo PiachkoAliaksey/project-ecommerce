@@ -12,11 +12,6 @@ const Banner = () => {
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
-
-    console.log(currentSlide);
-    // const [cards, setCards] = useState(data);
-    // const [skipTransition,setSkipTransition] = useState(false);
-
     const handlePrevSlide = () => {
         setCurrentSlide(currentSlide === 0 ? (data.length - 1) : ((prev) => prev - 1));
     }

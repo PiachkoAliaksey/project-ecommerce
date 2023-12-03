@@ -15,7 +15,7 @@ const Product: React.FC = () => {
 
     const [fullDetailsCard, setFullDetailsCard] = useState<IProduct | null>(null);
     const [quantityProduct, setQuantityProduct] = useState(1);
-    console.log(fullDetailsCard)
+    
 
     const handleIncreaseQuantity = () => {
         setQuantityProduct(prev => prev + 1)
@@ -43,9 +43,7 @@ const Product: React.FC = () => {
     }
 
     useEffect(() => {
-        console.log(location.state.item);
         setFullDetailsCard(location.state.item);
-
     }, [])
 
     return (

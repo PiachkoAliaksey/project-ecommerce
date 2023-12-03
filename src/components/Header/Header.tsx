@@ -8,7 +8,7 @@ import type { RootState } from '../../redux/store';
 const Header: React.FC = () => {
     const productData = useSelector((state: RootState) => state.products.productData);
     const userInfo = useSelector((state: RootState) => state.products.userInfo);
-    console.log(productData)
+    
     return (
         <section className="w-full h-20 bg-white border-b-[1px] border-b-gray-800 flex items-center sticky top-0 z-50  ">
             <div className="max-w-screen-x1 h-full mx-auto flex items-center justify-between">
